@@ -102,7 +102,8 @@ class Driver:
         return root
 
     def _get_driver_path(self):
-        return 'C:/parabank_testing/chromedriver.exe'
+        return self._get_root_dir() + self._driver_path[self._browser]
+        #return 'G:\Polikek\maslakov\сайтик\chromedriver.exe'
 
     def get_driver(self):
         return self._driver

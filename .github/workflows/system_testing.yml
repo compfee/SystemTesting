@@ -1,0 +1,27 @@
+name: system_testing
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+    branches:
+jobs:
+  test01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v2
+     #Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      - name: Install software
+        run: sudo apt-get install -y chromium-browser
+      - name: Install the necessary packages
+        run: |
+          pip install requests webdriver-manager selenium pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run the PytTest script
+        run: pytest --env=production --browser=chrome --is_headless=True tests/

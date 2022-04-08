@@ -24,7 +24,7 @@ from expected_results.users.invalid_users_templates.no_such_user import NoSuchUs
 @allure.feature("Services Page")
 @allure.story('Login/Logout Functionality')
 @pytest.mark.skipif(get_args()['env'] == 'production',
-                    reason="This is demo test that will have negative effect on Travis CI status")
+                     reason="This is demo test that will have negative effect on Travis CI status")
 @screenshot_on_fail()
 class TestUserLoginFromServicesPageEmptyFieldsError(unittest.TestCase):
 

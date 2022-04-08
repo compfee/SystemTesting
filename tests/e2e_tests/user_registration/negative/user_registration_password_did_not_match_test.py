@@ -6,6 +6,7 @@ from tests.config import Config
 from utils.screenshot import screenshot_on_fail
 from utils.step_definition import step_definition
 from utils.open_web_browser import open_web_browser
+from utils.get_args_from_cli import get_args
 
 from expected_results.users.base_user import BaseUser
 from expected_results.users.valid_users_templates.john_doe import JohnDoe

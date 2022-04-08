@@ -24,8 +24,8 @@ from expected_results.page_content.login_page_content import LoginPageContent
 @allure.sub_suite('Negative Tests')
 @allure.feature("Home Page")
 @allure.story('Login/Logout Functionality')
-#@pytest.mark.skipif(get_args()['env'] == 'production',
-#                    reason="This is demo test that will have negative effect on Travis CI status")
+@pytest.mark.skipif(get_args()['env'] == 'production',
+                   reason="This is demo test that will have negative effect on Travis CI status")
 @screenshot_on_fail()
 class TestUserLoginWrongPassword(unittest.TestCase):
 
